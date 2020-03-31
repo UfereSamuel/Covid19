@@ -1,0 +1,28 @@
+package com.example.convid_19selfscreeningtool;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class LowRiskActivity extends AppCompatActivity {
+Button mLowRiskCloseBtn;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_low_risk);
+
+        mLowRiskCloseBtn = findViewById(R.id.lowRiskCloseBtn);
+
+        mLowRiskCloseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LowRiskActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+}
